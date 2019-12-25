@@ -1,4 +1,6 @@
-{{ partial "navigation.html" . }}
 {{ if .IsHome }}
-  {{ partial "profile.html" . }}
+  {{ partial "large_header.html" . }}
+{{ else }}
+  {{ partial "small_header.html" . }}
 {{ end }}
+{{ partial "navigation.html" . }}
