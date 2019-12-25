@@ -5,12 +5,13 @@
   <meta content="{{ .Site.Author.name }}" name="author">
 
   <title>
-      {{- block "title" . -}}
-		{{- .Site.Title -}}
-		{{- if .Title }}
-		- {{ .Title }}
-		{{- end -}}
+    {{- block "title" . -}}
+      {{- .Site.Title -}}
+
+      {{- if .Title }}
+      - {{ .Title }}
       {{- end -}}
+    {{- end -}}
   </title>
 
   <link href="{{ "assets/css/style.css" | relURL }}" rel="stylesheet">
