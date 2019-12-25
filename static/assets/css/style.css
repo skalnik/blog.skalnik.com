@@ -12,6 +12,10 @@ canvas#curve {
   -webkit-mask-size: 100%;
 }
 
+.static-curve {
+  width: 100%;
+}
+
 ul.nav li a {
   display: inline;
   color: #000;
