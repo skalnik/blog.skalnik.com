@@ -1,20 +1,19 @@
-<footer id="footer">
-
-<section id="wrapper">
-  <ul>
-    <li><a href="/feed.xml">RSS</a></li>
-    <li><a href="/feed.json">JSON Feed</a></li>
-    <li><a href="https://micro.blog/{{ .Site.Author.username }}" rel="me">Micro.blog</a></li>
-<!--     <li><a class="u-email" href="mailto:" rel="me">Email</a></li> -->
-  </ul>
-  <form method="get" id="search" action="https://duckduckgo.com/">
-    <input type="hidden" name="sites" value="{{ "/" | absURL }}"/>
-    <input type="hidden" name="k8" value="#444444"/>
-    <input type="hidden" name="k9" value="#ee4792"/>
-    <input type="hidden" name="kt" value="h"/>
-    <input class="field" type="text" name="q" maxlength="255" placeholder="To search, type and hit Enter&hellip;"/>
-    <input type="submit" value="Search" style="display: none;" />
-  </form>
-</section>
-
+<footer class="row justify-content-center">
+  <section class="col-md-12">
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item"><a href="/feed.xml">RSS</a></li>
+      <li class="nav-item"><a href="/feed.json">JSON Feed</a></li>
+      <li class="nav-item"><a href="https://micro.blog/{{ .Site.Author.username }}" rel="me">Micro.blog</a></li>
+    </ul>
+  </section>
+  <section class="col-md-12">
+    <form method="get" id="search" action="https://duckduckgo.com/">
+      <input type="hidden" name="sites" value="{{ "/" | absURL }}"/>
+      <input type="hidden" name="k8" value="#444444"/>
+      <input type="hidden" name="k9" value="#ee4792"/>
+      <input type="hidden" name="kt" value="h"/>
+      <input class="field" type="text" name="q" maxlength="255" placeholder="To search, type and hit Enter&hellip;"/>
+      <input type="submit" value="Search" style="display: none;" />
+    </form>
+  </section>
 </footer>
