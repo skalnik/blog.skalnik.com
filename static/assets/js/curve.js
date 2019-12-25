@@ -2,9 +2,13 @@
   window.addEventListener("load", start);
 
   function start() {
-    const maxDepth = 8;
     const canvas = document.getElementById("curve");
+    if (canvas === null) {
+      return;
+    }
+
     const context = canvas.getContext("2d");
+    const maxDepth = 8;
 
     const pixelRatio = window.devicePixelRatio || 1;
     const canvasSize = canvas.getBoundingClientRect();
