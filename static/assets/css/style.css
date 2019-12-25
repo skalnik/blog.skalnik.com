@@ -2,14 +2,10 @@ canvas#curve {
   background: #ddd;
   width: 100%;
 
-  mask-image: url("./assets/img/skalnik.svg");
+  mask-image: url("/assets/img/skalnik.svg");
   mask-repeat: no-repeat;
   mask-position: 0px 0px;
   mask-size: 100%;
-  -webkit-mask-image: url("./assets/img/skalnik.svg");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: 0px 0px;
-  -webkit-mask-size: 100%;
 }
 
 ul.nav li a {
