@@ -1,18 +1,21 @@
-<article>
+<article class="col-md-8">
   {{ if .Title }}
     <header>
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <small>
+        <time datetime="{{ .Date.Format "12/30/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "12/30/2019, 5:53:07 PM" }}</time>
+        <a class="text-muted" href="{{ .Permalink }}">#</a>
+      </small>
     </header>
     <div class="post-body">
-      {{ .Content }}
+      {{ .Summary }}
+      {{ if .Truncated }}
+        <p><a href="{{ .RelPermalink }}">Read More</a></p>
+      {{ end }}
     </div>
-    <small>
-      <time datetime="{{ .Date.Format "01/02/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "01/02/2019, 5:53:07 PM" }}</time>
-      <a class="text-muted" href="{{ .Permalink }}">#</a>
-    </small>
   {{ else }}
     <small>
-      <time datetime="{{ .Date.Format "01/02/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "01/02/2019, 5:53:07 PM" }}</time>
+      <time datetime="{{ .Date.Format "01/02/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "12/30/2019, 5:53:07 PM" }}</time>
       <a class="text-muted" href="{{ .Permalink }}">#</a>
     </small>
     <div class="post-body">
@@ -22,4 +25,4 @@
   </a>
 </article>
 
-<hr />
+<hr class="w-100"/>
