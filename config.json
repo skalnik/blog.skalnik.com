@@ -1,3 +1,6 @@
 {
-  "pagination": 5
+  "pagination": 5,
+  "params": {
+    "enable_pagination": true
+  }
 }
