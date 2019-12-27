@@ -3,7 +3,7 @@
     <header>
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       <small>
-        <time datetime="{{ .Date.Format "12/30/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "12/30/2019, 5:53:07 PM" }}</time>
+        <time datetime="{{ .Date.Format "01/02/2006, 3:04:05 PM" }}" class="text-muted">{{ .Date.Format "01/02/2006, 3:04:05 PM" }}</time>
         <a class="text-muted" href="{{ .Permalink }}">#</a>
       </small>
     </header>
@@ -15,7 +15,7 @@
     </div>
   {{ else }}
     <small>
-      <time datetime="{{ .Date.Format "01/02/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "12/30/2019, 5:53:07 PM" }}</time>
+      <time datetime="{{ .Date.Format "01/02/2006, 3:04:05 PM" }}" class="text-muted">{{ .Date.Format "01/02/2006, 3:04:05 PM" }}</time>
       <a class="text-muted" href="{{ .Permalink }}">#</a>
     </small>
     <div class="post-body">
@@ -25,4 +25,4 @@
   </a>
 </article>
 
-<hr class="w-100"/>
+<hr class="w-100" />
