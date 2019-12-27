@@ -1,11 +1,7 @@
-<article class="col-md-8">
-  {{ if .Title }}
+{{ define "main" }}
+  <article class="col-md-8">
     <header>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <small>
-        <time datetime="{{ .Date.Format "12/30/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "12/30/2019, 5:53:07 PM" }}</time>
-        <a class="text-muted" href="{{ .Permalink }}">#</a>
-      </small>
+      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
     </header>
     <div class="post-body">
       {{ .Summary }}
@@ -13,14 +9,5 @@
         <p><a href="{{ .RelPermalink }}">Read More</a></p>
       {{ end }}
     </div>
-  {{ else }}
-    <small>
-      <time datetime="{{ .Date.Format "01/02/2019, 5:53:07 PM" }}" class="text-muted">{{ .Date.Format "12/30/2019, 5:53:07 PM" }}</time>
-      <a class="text-muted" href="{{ .Permalink }}">#</a>
-    </small>
-    <div class="post-body">
-      {{ .Content }}
-    </div>
-  {{ end }}
-  </a>
-</article>
+  </article>
+{{ end }}
