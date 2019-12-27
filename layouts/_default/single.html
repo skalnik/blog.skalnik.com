@@ -1,13 +1,10 @@
 {{ define "main" }}
   <article class="col-md-8">
     <header>
-      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      <h1>{{ .Title }}</h1>
     </header>
     <div class="post-body">
-      {{ .Summary }}
-      {{ if .Truncated }}
-        <p><a href="{{ .RelPermalink }}">Read More</a></p>
-      {{ end }}
+      {{ .Content }}
     </div>
   </article>
 {{ end }}
