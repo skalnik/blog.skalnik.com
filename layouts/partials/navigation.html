@@ -1,11 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <ul class="nav nav-pills nav-justified">
-      {{ if ne .IsHome true }}
-        <li class="nav-item">
-          <a class="p-1" href="/">🏠</a>
-        </li>
-      {{ end }}
+      <li class="nav-item">
+        <a class="p-1" href="/">🏠</a>
+      </li>
 
       {{ range .Site.Menus.main }}
         <li class="nav-item">
