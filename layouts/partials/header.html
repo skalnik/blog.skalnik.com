@@ -1,10 +1,29 @@
-<header class="row justify-content-between">
-  <div class="col-4">
-    <h1>
-      <canvas id="curve"><img src="/assets/img/skalnik.svg" alt="skalnik"/>skalnik</canvas>
-    </h1>
-  </div>
-  <div class="col-4">
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="https://skalnik.com">
+    <canvas id="curve"><img src="/assets/img/skalnik.svg" alt="skalnik"/>skalnik</canvas>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">🏠</a>
+      </li>
+
+      {{ range .Site.Menus.main }}
+        <li class="nav-item">
+        {{ if .Page.Params.redirect_url }}
+          <a class="nav-link" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+        {{ else }}
+          <a class= "nav-link" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+        {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+
     <form class="form-inline" method="get" id="search" action="https://duckduckgo.com/">
       <input type="hidden" name="sites" value="{{ "/" | absURL }}"/>
       <input type="hidden" name="k8" value="#444444"/>
@@ -12,8 +31,8 @@
       <input type="hidden" name="kt" value="h"/>
       <div class="btn-group input-group">
         <input class="form-control" type="text" name="q" maxlength="255" placeholder="Search"/>
-        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+        <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
       </div>
     </form>
   </div>
-</header>
+</nav>
