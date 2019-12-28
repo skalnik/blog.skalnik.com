@@ -4,9 +4,9 @@
   <body>
     <div class="container">
       {{ partial "header.html" . }}
+      {{ partial "navigation.html" . }}
       {{ block "main" . }}{{ end }}
       {{ partial "footer.html" . }}
-      {{ partial "custom_footer.html" . }}
     </div>
   </body>
 </html>
