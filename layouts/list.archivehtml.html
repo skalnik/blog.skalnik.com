@@ -34,10 +34,10 @@
             <small>
               <time datetime="{{ .Date.Format "01/02/2006, 3:04:05 PM" }}" class="text-muted">{{ .Date.Format "01/02/2006, 3:04:05 PM" }}</time>
             </small>
-            <p class="mb-1">
-              {{ .Summary | truncate 100 }}
-            </p>
           </div>
+          <p class="mb-1">
+            {{ .Summary | truncate 100 }}
+          </p>
         </a>
         {{ end }}
       </div>
