@@ -1,13 +1,13 @@
 {{ define "main" }}
-  <div class="row justify-content-center">
-    <h1 class="col-md-8">Archive</h>
+  <div class="row">
+    <h1 class="col">Archive</h>
   </div>
 
   {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 
   {{ if gt (len $list) 0 }}
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div class="row">
+      <div class="col">
         <h3>Categories</h3>
 
         <div class="list-group list-group-flush">
@@ -19,8 +19,8 @@
     </div>
   {{ end }}
 
-  <div class="row justify-content-center">
-    <div class="col-md-8">
+  <div class="row">
+    <div class="col">
       <h3>All Posts</h3>
       {{ $list := (where .Site.Pages "Type" "post") }}
 
