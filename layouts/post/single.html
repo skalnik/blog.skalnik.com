@@ -1,16 +1,14 @@
 {{ define "main" }}
 <div class="row">
   <article class="h-entry post col">
-    <header>
-      {{ with .Title }}
-        <h1 class="p-name">{{ . }}</h1>
-      {{ end }}
-      <h2 class="headline">
+    <h1 class="p-name">
+      {{ .Title }}
+      <small>
         <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">
           <a class="u-url dates" href="{{ .Permalink }}">{{ .Date.Format "Jan 2, 2006" }}</a>
         </time>
-      </h2>
-    </header>
+      </small>
+    </h1>
     <section class="e-content post-body">
       {{ .Content }}
     </section>
