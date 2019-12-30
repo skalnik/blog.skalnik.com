@@ -1,19 +1,51 @@
 {{ define "main" }}
+  <div class="row">
+    <h1>Archive</h>
+  </div>
+
   {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+
   {{ if gt (len $list) 0 }}
-    <div class="archive_categories" style="border-bottom: 1px solid lightgray; padding-bottom: 15px; margin-bottom: 30px;">
-      {{ range $list }}
-        <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-      {{ end }}
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2>Categories</h2>
+
+        <ul class="list-group list-group-flush">
+          {{ range $list }}
+            <li class="list-group-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
     </div>
   {{ end }}
 
-  {{ $list := (where .Site.Pages "Type" "post") }}
-  {{ range $list }}
-    <p class="h-entry">
-      <a href="{{ .Permalink }}" class="u-url"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
-      <span class="p-name"><b>{{ .Title }}</b></span>
-      <span class="p-summary">{{ .Summary | truncate 100 }}</span>
-    </p>
-  {{ end }}
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>All Posts</h2>
+      {{ $list := (where .Site.Pages "Type" "post") }}
+
+      <div class="list-group list-group-flush">
+        {{ range $list }}
+        <a class="list-group-item" href="{{ .Permalink }}">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ .Title }}</h5>
+            <small>
+              <time datetime="{{ .Date.Format "01/02/2006, 3:04:05 PM" }}" class="text-muted">{{ .Date.Format "01/02/2006, 3:04:05 PM" }}</time>
+            </small>
+            <p class="mb-1">
+              {{ .Summary | truncate 100 }}
+            </p>
+          </div>
+        </a>
+        <p class="h-entry">
+          <span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
+          <span class="p-name"><b>{{ .Title }}</b></span>
+          <span class="p-summary">{{ .Summary | truncate 100 }}</span>
+        </p>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
 {{ end }}
