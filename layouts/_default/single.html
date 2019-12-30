@@ -1,10 +1,10 @@
 {{ define "main" }}
-  <article class="h-entry col-md-8">
-    <header>
-      <h1 class="p-name">{{ .Title }}</h1>
-    </header>
-    <div class="e-content post-body">
-      {{ .Content }}
-    </div>
-  </article>
+  <div class="row">
+    <article class="h-entry col">
+        <h1 class="p-name">{{ .Title }}</h1>
+      <div class="e-content post-body">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
 {{ end }}
