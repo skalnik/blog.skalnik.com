@@ -7,7 +7,7 @@
         <a class="text-muted" href="{{ .Permalink }}">#</a>
       </small>
     </header>
-    <div class="post-body">
+    <div class="post-body pt-3">
       {{ .Summary }}
       {{ if .Truncated }}
         <p><a href="{{ .RelPermalink }}">Read More</a></p>
@@ -18,7 +18,7 @@
       <time datetime="{{ .Date.Format "01/02/2006, 3:04:05 PM" }}" class="text-muted">{{ .Date.Format "01/02/2006, 3:04:05 PM" }}</time>
       <a class="text-muted" href="{{ .Permalink }}">#</a>
     </small>
-    <div class="post-body">
+    <div class="post-body pt-3">
       {{ .Content }}
     </div>
   {{ end }}
