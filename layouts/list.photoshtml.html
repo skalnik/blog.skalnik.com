@@ -1,12 +1,12 @@
 {{ define "main" }}
   <div class="row row-cols-3">
-    {{- $list := where .Pages ".Params.photos" "!=" nil -}}
+    {{- $list := where .Pages ".Params.images" "!=" nil -}}
     {{- $len := (len $list) -}}
 
     {{ range $index, $value := $list }}
     <div class="photo col py-2">
       <a href="{{ .Permalink }}">
-        {{ range first 1 .Params.photos }}
+        {{ range first 1 .Params.images }}
           <img src="{{ . }}" class="img-fluid img-thumbnail" />
         {{ end }}
       </a>
