@@ -27,15 +27,32 @@
       <div class="list-group list-group-flush">
         {{ range $list }}
         <a class="list-group-item list-group-item-action" href="{{ .Permalink }}">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{ .Title }}</h5>
-            <small>
-              <time datetime="{{ .Date.Format "01/02/2006" }}" class="text-muted">{{ .Date.Format "01/02/2006" }}</time>
-            </small>
-          </div>
-          <p class="mb-1">
-            {{ .Summary | truncate 100 }}
-          </p>
+          {{- if .Title }}
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ .Title }}</h5>
+              <small>
+                <time datetime="{{ .Date.Format "01/02/2006" }}" class="text-muted">{{ .Date.Format "01/02/2006" }}</time>
+              </small>
+            </div>
+            <p class="mb-1">
+              {{ .Summary | truncate 100 }}
+            </p>
+          {{- else if .Summary -}}
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">
+                {{.Summary | trucate 100 }}
+              </h5>
+              <small>
+                <time datetime="{{ .Date.Format "01/02/2006" }}" class="text-muted">{{ .Date.Format "01/02/2006" }}</time>
+              </small>
+            </div>
+          {{- else - }}
+            <div class="d-flex w-100">
+              <h5 class="mb-1">
+                <time datetime="{{ .Date.Format "01/02/2006" }}">{{ .Date.Format "01/02/2006" }}</time>
+              </h5>
+            </div>
+          {{- end -}}
         </a>
         {{ end }}
       </div>
