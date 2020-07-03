@@ -1,7 +1,7 @@
 {{ $pag := $.Paginator }}
 
 {{ if gt $pag.TotalPages 1 }}
-  <ul class="pagination">
+  <ul class="pagination justify-content-center">
     {{ with $pag.First }}
       <li class="page-item">
           <a href="{{ .URL }}" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>

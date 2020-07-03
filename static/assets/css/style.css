@@ -42,7 +42,8 @@ a:hover {
 
 a.navbar-brand, a.navbar-brand:hover,
 .photo a, .photo a:hover,
-a.list-group-item-action, a.list-group-item-action:hover {
+a.list-group-item-action, a.list-group-item-action:hover,
+.pagination a, .pagination a:hover {
   box-shadow: none;
 }
 
