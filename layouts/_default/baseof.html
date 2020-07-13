@@ -6,6 +6,10 @@
       {{ partial "header.html" . }}
       {{ block "main" . }}{{ end }}
       {{ partial "footer.html" . }}
+
+      {{ range .Site.Params.plugins_js }}
+        <script src="{{ . }}"></script>
+      {{ end }}
     </div>
   </body>
 </html>

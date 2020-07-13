@@ -52,4 +52,12 @@
   <link rel="subscribe" href="https://micro.blog/users/follow" />
 
   <script type="text/javascript" src="{{ "assets/js/curve.js" | relURL }}"></script>
+
+  {{ range .Site.Params.plugins_css }}
+    <link rel="stylesheet" href="{{ . }}" />
+  {{ end }}
+
+  {{ range $filename := .Site.Params.plugins_html }}
+    {{ partial $filename $ }}
+  {{ end }}
 </head>
