@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div class="row row-cols-3">
+  <div class="row row-cols-3 align-items-center">
     {{- $list := where .Pages ".Params.images" "!=" nil -}}
     {{- $len := (len $list) -}}
 
