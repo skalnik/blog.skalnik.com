@@ -10,7 +10,7 @@
     const context = canvas.getContext("2d");
     const maxDepth = 8;
 
-    const pixelRatio = window.devicePixelRatio || 1;
+    const pixelRatio = (window.devicePixelRatio || 1) * 2;
     const canvasSize = canvas.getBoundingClientRect();
     canvas.width = canvasSize.width * pixelRatio;
     canvas.height = (canvasSize.width / 3.5) * pixelRatio;
