@@ -7,7 +7,7 @@
     <div class="photo col py-2">
       <a href="{{ .Permalink }}">
         {{ range first 1 .Params.images }}
-          <img src="{{ . }}" class="img-fluid img-thumbnail" />
+          <img src="{{ . }}" loading="lazy" class="img-fluid img-thumbnail" />
         {{ end }}
       </a>
     </div>
